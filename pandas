@@ -1,0 +1,60 @@
+import pandas as pd
+def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
+    df=pd.DataFrame(student_data,columns=["student_id","age"])
+    return df
+
+
+import pandas as pd
+def getDataframeSize(players: pd.DataFrame) -> List[int]:
+    return list(players.shape)
+
+import pandas as pd
+def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
+    return employees.head(3)
+
+
+import pandas as pd
+def selectData(students: pd.DataFrame) -> pd.DataFrame:
+    return students.loc[students['student_id']==101,'name':]
+
+
+
+import pandas as pd
+def createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    employees['bonus']=employees['salary']*2
+    return employees
+
+
+
+import pandas as pd
+def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
+   df= students.dropna(subset=['name'])
+   return df
+
+
+import pandas as pd
+def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
+   employees['salary']= employees['salary']*2
+   return employees
+
+
+import pandas as pd
+def renameColumns(students: pd.DataFrame) -> pd.DataFrame:
+    df=students.rename(columns={'id':'student_id',"first":"first_name","last":"last_name","age":"age_in_years"})
+    return df
+
+
+import pandas as pd
+def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
+    df= students.astype({'grade':int})
+    return df
+
+
+import pandas as pd
+def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
+    df = products.fillna({'quantity':0})
+    return df
+
+
+
+
